@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+# indent one step inside a class! (everything below)
 #index
 def index
   @posts = Post.all
@@ -20,7 +21,7 @@ end
 #show
 def show
   @post = Post.find(params[:id])
-  @comments = @post.comments
+  @comments = @post.comments # nice use of the association method!
 end
 
 #edit
