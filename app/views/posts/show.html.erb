@@ -9,6 +9,12 @@
 <h3><%= link_to "Post Comment", new_post_comment_path(@post) %> </h3>
 
 <% @post.comments.each do |comment| %>
+<!-- nice use of string interpolation! -->
 <h4><%= "#{comment.title} by #{comment.author} commented at #{comment.created_at}" %></h4>
+
+<!-- though it's not needed in the case where the string is this simple: -->
 <p><%= "#{comment.body}" %></p>
+
+<!-- do this instead -->
+<p><%= comment.body %></p>
 <% end %>

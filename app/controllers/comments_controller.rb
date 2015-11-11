@@ -14,7 +14,11 @@ class CommentsController < ApplicationController
   #create
   def create
     @post = Post.find(params[:post_id])
+
+    # nice, only... what is a song_params! be careful if you
+    # copy / paste code
     @comment = @post.comments.create(song_params)
+
     redirect_to post_path(@post)
   end
 
@@ -34,6 +38,8 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     redirect_to post_path(@post)
   end
+
+  # why is this commented out?
   #
   # #destroy
   # def destroy
