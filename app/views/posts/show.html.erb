@@ -1,0 +1,14 @@
+<h2><%= "#{@post.title} by #{@post.author} written #{@post.created_at} " %></h2>
+
+<%= image_tag @post.photo_url %>
+
+<p><%= @post.body %></p>
+
+<h3> <%= link_to 'All Posts', posts_path %> </h3>
+
+<h3><%= link_to "Post Comment", new_post_comment_path(@post) %> </h3>
+
+<% @post.comments.each do |comment| %>
+<h4><%= "#{comment.title} by #{comment.author} commented at #{comment.created_at}" %></h4>
+<p><%= "#{comment.body}" %></p>
+<% end %>
