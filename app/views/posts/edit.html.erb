@@ -1,5 +1,6 @@
-<h2>Edit Post</h2>
+<h1>Edit Post</h1>
 
+<div class="form">
 <%= form_for @post do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -15,3 +16,4 @@
 
   <%= f.submit "Edit Post!"%>
 <% end %>
+</div>

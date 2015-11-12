@@ -1,16 +1,16 @@
 <h1>Posts</h1>
 
-<!-- create new -->
-<%= link_to "Create New Post", new_post_path %>
+<h2><%= link_to "Create New Post", new_post_path %></h2>
 
 <% @posts.each do |post| %>
-        <div><%= post.title %></div>
-        <div><%= post.author %></div>
-      <ul>
-        <li><%= link_to 'Show', post %></li>
-        <% if post.user == current_user %>
-        <li><%= link_to 'Edit', edit_post_path(post) %></li>
-        <li><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-        <% end %>
-      </ul>
-    <% end %>
+<h4><%= link_to "#{post.title} by #{post.author}", post %>
+</h4>
+
+<ul class="options">
+  <% if post.user == current_user %>
+  <li><%= link_to 'Edit', edit_post_path(post) %></li>
+  <li><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  <% end %>
+</ul>
+
+<% end %>

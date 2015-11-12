@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Scribble</title>
+  <title>Bibble</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"/>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h3> <%= link_to 'All Posts', posts_path %> </h3>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <% if current_user %>

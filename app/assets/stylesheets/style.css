@@ -1,0 +1,54 @@
+body {
+  background-color: rgb(195, 198, 177)
+}
+
+h1 {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+	font-size: 28px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+  text-align: center;
+}
+h3 {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 15.4px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+  text-align: left;
+  text-indent: 25px;
+  text-decoration: underline;
+}
+p {
+  text-align: justify;
+}
+.form {
+  display: list-item;
+}
+.options {
+  display: block;
+  text-align: left;
+}

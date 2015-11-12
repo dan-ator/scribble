@@ -1,6 +1,7 @@
 <h2>Edit Comment</h2>
 
-<%= form_for [@post, @comment] do |f| %>
+<div class="form">
+  <%= form_for [@post, @comment] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -12,3 +13,4 @@
 
   <%= f.submit "Edit Comment!"%>
 <% end %>
+</div>
