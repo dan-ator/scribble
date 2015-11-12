@@ -1,8 +1,14 @@
 class PostsController < ApplicationController
 
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+#this still shows the "are you sure delete" comment before it disallows it-fix!
   #index
   def index
-    @posts = Post.all
+    # if current_user
+    #   @posts = current_user.posts
+    # else
+      @posts = Post.all
+    # end
   end
 
   #new
@@ -12,7 +18,7 @@ class PostsController < ApplicationController
 
   #create
   def create
-    @post = Post.create!(post_params)
+    @post = current_user.posts.create!(post_params)
     redirect_to post_path(@post)
   end
 
