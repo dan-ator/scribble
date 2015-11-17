@@ -19,8 +19,11 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params.merge(user: current_user))
 
     # option 2
+    # @comment = @post.comments.create(comment_params)
     # @comment.user = current_user
     # @comment.save
+
+
     redirect_to post_path(@post)
   end
 
