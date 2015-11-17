@@ -17,25 +17,23 @@ ActiveRecord::Schema.define(version: 20151112191051) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.string   "author"
     t.string   "title"
     t.string   "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "comment_id"
+    t.integer  "user_id"
     t.integer  "post_id"
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "body"
-    t.string   "author"
     t.string   "photo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "post_id"
     t.integer  "user_id"
   end
 
@@ -58,4 +56,5 @@ ActiveRecord::Schema.define(version: 20151112191051) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
 end
