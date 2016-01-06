@@ -3,23 +3,43 @@
 <head>
   <title>Bibble</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"/>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"/> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style.css"/>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h3> <%= link_to 'All Posts', posts_path %> </h3>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <% if current_user %>
-  <h3>Logged in as <strong><%= current_user.email %></strong></h3>
-  <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
-<% else %>
-  <h3><%= link_to 'Signup', new_user_registration_path %></h3>
-  <h3><%= link_to 'Login', new_user_session_path %></h3>
-<% end %>
-<%= yield %>
-
+  <div class="container">
+    <div class="jumbotron">
+      <h2> <%= link_to 'All Posts', posts_path %> </h2>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <% if current_user %>
+      <h4>Logged in as <strong><%= current_user.email %></strong></h4>
+      <h4><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h4>
+        <% else %>
+      <h4><%= link_to 'Signup', new_user_registration_path %></h4>
+      <h4><%= link_to 'Login', new_user_session_path %></h4>
+      <% end %>
+      <!-- One button -->
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Dropdown
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </div>
+    </div>
+    <%= yield %>
+  </div>
 </body>
 </html>
