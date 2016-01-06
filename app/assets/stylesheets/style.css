@@ -52,3 +52,12 @@ p {
   display: block;
   text-align: left;
 }
+
+#login-status {
+  position: relative;
+  display: block;
+}
+
+#dropdownMenu1 {
+  background-color: rgb(160, 168, 217);
+}
