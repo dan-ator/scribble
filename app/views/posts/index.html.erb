@@ -3,7 +3,7 @@
   <h2><%= link_to "Create New Post", new_post_path %></h2>
 </div>
 <% @posts.each do |post| %>
-<h4><%= link_to "#{post.title} by #{post.author}", post %>
+<h4><%= link_to "#{post.title} by #{post.user.email}", post %>
 </h4>
 
 <ul class="options">

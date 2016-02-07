@@ -1,4 +1,4 @@
-<h2><%= "#{@post.title} by #{@post.author} written #{@post.created_at} " %></h2>
+<h2><%= "#{@post.title} by #{@post.user.email} written #{@post.created_at} " %></h2>
 
 <% if @post.user == current_user %>
 <h3><%= link_to 'Edit', edit_post_path(@post) %></h3>
@@ -12,8 +12,8 @@
 <h4><%= link_to "Post Comment", new_post_comment_path(@post) %> </h4>
 
 <% @post.comments.each do |comment| %>
-<h4><%= "#{comment.title} by #{comment.author} commented at #{comment.created_at}" %>
-  <% if comment.author == current_user.email  %>
+<h4><%= "#{comment.title} by #{comment.user.email} commented at #{comment.created_at}" %>
+  <% if comment.user == current_user  %>
     <ul class="options">
       <li><%= link_to "Edit Comment", edit_post_comment_path(@post, comment) %></li>
       <li><%= link_to "Delete Comment", post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %></li>
